@@ -5,7 +5,8 @@
   },
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "globals": {
     "__base": true
@@ -14,11 +15,7 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "quotes": [
-      "error",
-      "single",
-      { "avoidEscape": true, "allowTemplateLiterals": false }
-    ],
+    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
     "linebreak-style": [2, "unix"],
     "semi": [2, "always"],
     "max-len": ["error", 120]
