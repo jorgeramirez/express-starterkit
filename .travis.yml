@@ -6,4 +6,5 @@ node_js:
   - '12'
 
 script:
+  - cp .env.example .env.test
   - npm test

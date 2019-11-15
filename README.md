@@ -65,8 +65,7 @@ const User = require('@app/models/user');
 // the rest of your code
 ```
 
-Basically, `@app` is a symlink to the `src` folder. It plays nicely with IDEs (e.g., intellisense works).
-
+Basically, `@app` is a symlink to the `src` folder. It plays nicely with IDEs (e.g., intellisense works). We also included a `preinstall` hook to stop npm from [erasing your src folder](https://gist.github.com/branneman/8048520#gistcomment-3009096).
 
 ## TODO
 
