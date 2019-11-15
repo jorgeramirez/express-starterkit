@@ -57,7 +57,7 @@ npm start
 
 ## Relative requires
 
-The `create-symlink.js` script runs as a postinstall hook. It allow us to use the following pattern for relative requires within our project.
+The `create-symlink.js` script runs as a postinstall hook. It allows us to use the following pattern for relative requires within our project.
 
 ```javascript
 const User = require('@app/models/user');
