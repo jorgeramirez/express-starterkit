@@ -7,7 +7,8 @@
     "test": "jest --verbose",
     "start": "nodemon",
     "preinstall": "rm -f node_modules/@app",
-    "postinstall": "node ./create-symlink.js"
+    "postinstall": "node ./create-symlink.js",
+    "i": "npm run preinstall && npm i"
   },
   "author": "Jorge Ramírez",
   "license": "MIT",
