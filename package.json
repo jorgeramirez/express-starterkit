@@ -8,7 +8,8 @@
     "start": "nodemon",
     "preinstall": "rm -f node_modules/@app",
     "postinstall": "node ./create-symlink.js",
-    "i": "npm run preinstall && npm i"
+    "i": "node ./install-wrapper.js install",
+    "u": "node ./install-wrapper.js uninstall"
   },
   "author": "Jorge Ramírez",
   "license": "MIT",

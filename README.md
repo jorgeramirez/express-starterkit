@@ -67,6 +67,30 @@ const User = require('@app/models/user');
 
 Basically, `@app` is a symlink to the `src` folder. It plays nicely with IDEs (e.g., intellisense works). We also included a `preinstall` hook to stop npm from [erasing your src folder](https://gist.github.com/branneman/8048520#gistcomment-3009096).
 
+## Installing additional dependencies
+
+If you want to install a new dependency (e.g, `node-fetch`), do the following:
+
+```
+npm run i -- --save node-fetch
+```
+
+And to uninstall
+
+```
+npm run u -- node-fetch
+```
+
+### Why `npm run i` and `npm run u`?
+
+The trick shown above that allows us to use relative requires comes with a catch. If we want to install a node library, say `node-fetch` we do:
+
+```
+npm install --save node-fetch
+```
+
+Doing this [will erase the content of your src folder](https://gist.github.com/branneman/8048520#gistcomment-3009096)!! Even though we already have the preinstall hook. That's why we rely on the `install-wrapper.js` to run `preinstall` and `postinstall` hooks when we install/uninstall dependencies.
+
 ## TODO
 
 - [ ] Add tests examples
