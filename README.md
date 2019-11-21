@@ -49,7 +49,13 @@ Run the following command to install the dependencies of this starter kit (do th
 npm install
 ```
 
-Start the server with
+
+Create the environment variables by issuing the following
+
+```shell
+cp .env.example .env
+```
+Then start the server with
 
 ```
 npm start
