@@ -1,5 +1,5 @@
 const { Router } = require('express');
-// This dependency allow us to avoid the UnhandledPromiseRejectionWarning
+// This dependency allows us to avoid the UnhandledPromiseRejectionWarning
 const asyncHandler = require('express-async-handler');
 
 const UserService = require('@app/services/users');
