@@ -31,7 +31,7 @@ async function loader(app) {
   // Load API routes
   app.use(config.api.prefix, routes());
 
-  /// catch 404 and forward to error handler
+  // catch 404 and forward to error handler
   app.use((req, res, next) => {
     const err = new Error('Not Found');
     err['status'] = 404;
@@ -51,9 +51,16 @@ async function loader(app) {
     }
     return next(err);
   });
+
   // eslint-disable-next-line no-unused-vars
   app.use((err, req, res, next) => {
-    res.status(err.status || 500);
+    let status = err.status || 400;
+
+    // TODO: define a helper function that creates an ApplicationError instance
+    if (err.name === 'ApplicationError') {
+      status = 500;
+    }
+    res.status(status);
     res.json({
       errors: {
         message: err.message
