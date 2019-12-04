@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose",
     "start": "nodemon",
-    "preinstall": "rm -f node_modules/@app",
+    "preinstall": "node ./delete-symlink.js",
     "postinstall": "node ./create-symlink.js",
     "i": "node ./install-wrapper.js install",
     "u": "node ./install-wrapper.js uninstall"
