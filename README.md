@@ -97,6 +97,16 @@ npm install --save node-fetch
 
 Doing this [will erase the content of your src folder](https://gist.github.com/branneman/8048520#gistcomment-3009096)!! Even though we already have the preinstall hook. That's why we rely on the `install-wrapper.js` to run `preinstall` and `postinstall` hooks when we install/uninstall dependencies.
 
+## Heroku
+
+Configure the following environment variable in your Heroku application to make sure Heroku does not delete the `src` folder during the build and deployment.
+
+```
+heroku config:set NPM_CONFIG_PRODUCTION=false NODE_MODULES_CACHE=false --app [your app name]
+```
+
+You could also configure the environment variables using Heroku's dashboard `Settings -> Reveal Config Vars`.
+
 ## TODO
 
 - [ ] Add tests examples
